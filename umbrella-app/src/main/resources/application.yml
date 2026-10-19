@@ -31,7 +31,7 @@ logging:
 agentscope:
   dashscope:
     enabled: true
-    api-key: sk-32e6b04a6bc941ab9aa88ae21e10fc82
+    api-key:
     model-name: qwen3.8-max
     stream: true
     enable-thinking: false
