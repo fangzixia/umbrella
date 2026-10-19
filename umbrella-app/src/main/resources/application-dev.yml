@@ -1,0 +1,3 @@
+logging:
+  level:
+    com.runa.smarter.umbrella: DEBUG

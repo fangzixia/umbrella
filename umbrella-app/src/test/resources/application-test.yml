@@ -1,0 +1,8 @@
+agentscope:
+  dashscope:
+    enabled: false
+
+logging:
+  level:
+    root: WARN
+    com.runa.smarter.umbrella: INFO
