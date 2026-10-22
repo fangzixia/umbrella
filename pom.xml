@@ -51,18 +51,33 @@
             </dependency>
             <dependency>
                 <groupId>com.runa.smarter</groupId>
-                <artifactId>umbrella-tools</artifactId>
+                <artifactId>umbrella-graph</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.runa.smarter</groupId>
-                <artifactId>umbrella-graph</artifactId>
+                <artifactId>umbrella-tools</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.runa.smarter</groupId>
                 <artifactId>umbrella-integration</artifactId>
                 <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.agentscope</groupId>
+                <artifactId>agentscope-core</artifactId>
+                <version>${agentscope.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.agentscope</groupId>
+                <artifactId>agentscope-harness</artifactId>
+                <version>${agentscope.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.agentscope</groupId>
+                <artifactId>agentscope-dashscope-spring-boot-starter</artifactId>
+                <version>${agentscope.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

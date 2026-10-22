@@ -7,4 +7,8 @@ public class GraphDefinitionException extends RuntimeException {
         super(message);
     }
 
+    public static GraphDefinitionException because(String reason, String remedy) {
+        return new GraphDefinitionException(BusinessErrorMessage.format(reason, remedy));
+    }
+
 }

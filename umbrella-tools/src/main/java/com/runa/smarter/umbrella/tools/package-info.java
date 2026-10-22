@@ -1,5 +1,5 @@
 /**
- * Agent 工具与图注册：{@link com.runa.smarter.umbrella.tools.graph.GraphRegistry} 负责手动 {@code init()} 并通过 SPI 拉取 integration 贡献。
- * 编译期仅依赖 {@code umbrella-graph}，不依赖 integration。
+ * 将图上 {@link com.runa.smarter.umbrella.graph.NodeCapability} 与本模块 {@code custom} 包声明的工具
+ * 装配为 AgentScope {@link io.agentscope.core.tool.Toolkit}，供 runtime 构建 Agent。
  */
 package com.runa.smarter.umbrella.tools;

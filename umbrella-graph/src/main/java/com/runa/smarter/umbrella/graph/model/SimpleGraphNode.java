@@ -1,5 +1,6 @@
 package com.runa.smarter.umbrella.graph.model;
 
+import com.runa.smarter.umbrella.graph.BusinessErrorMessage;
 import com.runa.smarter.umbrella.graph.GraphNode;
 import com.runa.smarter.umbrella.graph.NodeCapability;
 import java.util.List;
@@ -14,10 +15,14 @@ public record SimpleGraphNode(
 
     public SimpleGraphNode {
         if (type == null || type.isBlank()) {
-            throw new IllegalArgumentException("node type must not be blank");
+            throw new IllegalArgumentException(BusinessErrorMessage.format(
+                    "节点 type 为空或仅包含空白字符。",
+                    "请为节点指定类型（如 service、agent 或 wds-type-*）。"));
         }
         if (displayName == null || displayName.isBlank()) {
-            throw new IllegalArgumentException("node displayName must not be blank");
+            throw new IllegalArgumentException(BusinessErrorMessage.format(
+                    "节点 displayName 为空或仅包含空白字符。",
+                    "请从业务数据填充节点显示名称（如 WDS 的 name 字段）。"));
         }
         if (properties == null) {
             properties = GraphProperties.EMPTY;

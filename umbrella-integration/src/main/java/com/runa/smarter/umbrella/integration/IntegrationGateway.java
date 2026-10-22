@@ -1,5 +1,6 @@
 package com.runa.smarter.umbrella.integration;
 
+import com.runa.smarter.umbrella.graph.BusinessErrorMessage;
 import java.time.Duration;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,13 +30,15 @@ public class IntegrationGateway {
     public IntegrationHealth checkHealth() {
         boolean databaseUp = pingDatabase();
         boolean redisUp = pingRedis();
-        String message = "database=%s, redis=%s".formatted(up(databaseUp), up(redisUp));
+        String message = "数据库=%s, Redis=%s".formatted(up(databaseUp), up(redisUp));
         return new IntegrationHealth(databaseUp, redisUp, message);
     }
 
     public void putDemoCache(String key, String value) {
         if (redisTemplate == null) {
-            throw new IllegalStateException("Redis is not configured");
+            throw new IllegalStateException(BusinessErrorMessage.format(
+                    "当前环境未启用 Redis（StringRedisTemplate 不可用）。",
+                    "在配置中启用 spring.data.redis 并确保 Redis 可连接，或勿调用依赖 Redis 的演示缓存工具。"));
         }
         redisTemplate.opsForValue().set(demoKey(key), value, DEMO_CACHE_TTL);
     }
@@ -73,7 +76,7 @@ public class IntegrationGateway {
     }
 
     private static String up(boolean available) {
-        return available ? "UP" : "DOWN";
+        return available ? "可用" : "不可用";
     }
 
 }

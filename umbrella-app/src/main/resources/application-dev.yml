@@ -1,3 +1,22 @@
 logging:
   level:
     com.runa.smarter.umbrella: DEBUG
+
+agentscope:
+  dashscope:
+    enabled: true
+
+integration:
+  bearer: 2727afb5-49e2-487a-851e-85380da517e7
+  graph:
+    url: www.baidu.com
+    auth: true
+  device:
+    url: www.baidu.com
+    auth: false
+  read-command:
+    url: www.baidu.com
+    auth: false
+  write-command:
+    url: www.baidu.com
+    auth: false

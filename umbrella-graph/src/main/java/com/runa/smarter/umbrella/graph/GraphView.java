@@ -8,6 +8,9 @@ import java.util.Optional;
 /** 图的只读视图：查询节点、边与能力。 */
 public interface GraphView {
 
+    /** 图谱名称，用于展示。 */
+    String name();
+
     /** 全部节点（副本，不可通过返回值修改内部图）。 */
     Collection<GraphNode> nodes();
 

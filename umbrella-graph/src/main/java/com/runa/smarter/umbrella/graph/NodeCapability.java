@@ -7,6 +7,11 @@ public interface NodeCapability {
 
     String description();
 
+    /** 是否支持 {@link #invoke}；仅声明、无执行逻辑时为 {@code false}。 */
+    default boolean invokable() {
+        return true;
+    }
+
     Object invoke(CapabilityInvokeRequest request);
 
 }

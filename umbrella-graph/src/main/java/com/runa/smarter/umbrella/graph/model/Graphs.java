@@ -14,6 +14,11 @@ public final class Graphs {
         return new MutableGraph();
     }
 
+    /** 指定名称的空图。 */
+    public static GraphEditor empty(String name) {
+        return new MutableGraph(name);
+    }
+
     /** 从已有视图复制为新的可变图。 */
     public static GraphEditor from(GraphView view) {
         return new MutableGraph(view);
